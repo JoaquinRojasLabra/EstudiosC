@@ -34,7 +34,8 @@ export default function Team() {
                   src={m.photo}
                   alt={`Retrato de ${m.name}`}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+                  style={{ objectPosition: m.pos }}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/85 to-transparent" />
                 <span className="absolute bottom-5 left-6 text-[10px] tracking-[0.3em] text-ivory/50 uppercase">
