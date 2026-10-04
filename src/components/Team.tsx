@@ -21,7 +21,7 @@ export default function Team() {
               transition={{ duration: 1.1, delay: i * 0.2, ease }}
               className="group"
             >
-              {/* Panel retrato (foto pendiente) */}
+              {/* Panel retrato con foto real */}
               <div className="relative aspect-[5/4] overflow-hidden bg-navy sm:aspect-[16/10]">
                 <motion.div
                   initial={{ scaleY: 1 }}
@@ -30,20 +30,13 @@ export default function Team() {
                   transition={{ duration: 1.2, delay: 0.3 + i * 0.2, ease: [0.76, 0, 0.24, 1] }}
                   className="absolute inset-0 z-20 origin-top bg-paper"
                 />
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 30% 20%, rgba(200,169,107,0.25), transparent 55%), linear-gradient(160deg, #131b2b, #0a0c11)",
-                  }}
+                <img
+                  src={m.photo}
+                  alt={`Retrato de ${m.name}`}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
                 />
-                <div className="spin-slow absolute top-1/2 left-1/2 h-[75%] w-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold/20" />
-                <div className="spin-slow-rev absolute top-1/2 left-1/2 aspect-square h-[95%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-gold/15" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-gold-grad font-serif text-[8rem] leading-none transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 sm:text-[10rem]">
-                    {m.initials}
-                  </span>
-                </div>
+                <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/85 to-transparent" />
                 <span className="absolute bottom-5 left-6 text-[10px] tracking-[0.3em] text-ivory/50 uppercase">
                   {m.role}
                 </span>
