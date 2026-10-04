@@ -34,7 +34,7 @@ export default function Team() {
                   src={m.photo}
                   alt={`Retrato de ${m.name}`}
                   loading="lazy"
-                  style={{ objectPosition: m.pos }}
+                  style={{ objectPosition: m.pos, transform: `scale(${m.zoom})` }}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/85 to-transparent" />
