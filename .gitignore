@@ -1,0 +1,25 @@
+# dependencias
+node_modules/
+
+# build
+dist/
+dist-ssr/
+*.local
+
+# vercel
+.vercel/
+
+# editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+npm-debug.log*
