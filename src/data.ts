@@ -114,7 +114,7 @@ export const team = [
     role: "Socio",
     initials: "DS",
     photo: diegoFoto,
-    pos: "50% 50%",
+    pos: "50% 45%",
     zoom: 1,
     bio: "Abogado de la Universidad Alberto Hurtado. Postítulo en Derecho Administrativo y Gestión Pública. Profesor asistente en la FEN de la Universidad de Chile. Experiencia en seguros, responsabilidad y daños, litigación civil, consumidor, recupero y gestión de carteras judiciales.",
     phone: "+56 9 7865 0792",
