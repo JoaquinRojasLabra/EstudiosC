@@ -151,10 +151,7 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Pie de foto + scroll */}
-      <div className="absolute right-6 bottom-28 z-10 hidden origin-bottom-right rotate-90 text-[10px] tracking-[0.3em] text-ivory/40 uppercase lg:right-10 lg:block">
-        Foto referencial
-      </div>
+      {/* Scroll */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
