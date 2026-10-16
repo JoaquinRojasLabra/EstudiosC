@@ -53,15 +53,6 @@ export default function Team() {
                   </span>
                 </div>
                 <p className="mt-6 leading-relaxed text-ink/70">{m.bio}</p>
-                <div className="mt-7 flex flex-col gap-3 text-sm sm:flex-row sm:gap-10">
-                  <a
-                    href={`mailto:${m.email}`}
-                    className="group/l relative w-fit tracking-wide text-ink transition-colors hover:text-[#8a6d35]"
-                  >
-                    {m.email}
-                    <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-[#8a6d35] transition-transform duration-500 group-hover/l:scale-x-100" />
-                  </a>
-                </div>
               </div>
             </motion.article>
           ))}

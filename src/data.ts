@@ -115,7 +115,6 @@ export const team = [
     pos: "50% 45%",
     zoom: 1,
     bio: "Abogado de la Universidad Alberto Hurtado. Postítulo en Derecho Administrativo y Gestión Pública. Profesor asistente en la FEN de la Universidad de Chile. Experiencia en seguros, responsabilidad y daños, litigación civil, consumidor, recupero y gestión de carteras judiciales.",
-    email: "diego@estudiosc.cl",
   },
   {
     name: "Camila Castillo Oyarzún",
@@ -125,7 +124,6 @@ export const team = [
     pos: "50% 45%",
     zoom: 1,
     bio: "Abogada con práctica en litigación y tramitación penal, derecho laboral y aguas, con especial dedicación a audiencias y tramitación oral. Su experiencia fortalece la conducción procesal y la representación directa de clientes en asuntos contenciosos.",
-    email: "camila@estudiosc.cl",
   },
 ];
 
