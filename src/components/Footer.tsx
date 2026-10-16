@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { navLinks, PHONE, PHONE_HREF, EMAIL } from "../data";
+import { navLinks, EMAIL } from "../data";
 import logoStack from "../assets/logo-512.png";
 import { Reveal, ease } from "./ui";
 
@@ -34,9 +34,6 @@ export default function Footer() {
             <div className="mt-6 space-y-1 text-sm text-ivory/70">
               <a href={`mailto:${EMAIL}`} className="block transition-colors hover:text-gold">
                 {EMAIL}
-              </a>
-              <a href={PHONE_HREF} className="block transition-colors hover:text-gold">
-                {PHONE}
               </a>
             </div>
           </Reveal>
@@ -79,7 +76,6 @@ export default function Footer() {
         <div className="flex flex-col gap-3 py-8 text-xs leading-relaxed text-ivory/40 md:flex-row md:justify-between">
           <div>
             <p>© 2026 Sepúlveda Castillo Abogados.</p>
-            <p className="mt-1">* Datos marcados con asterisco son provisorios, pendientes de confirmación del estudio.</p>
           </div>
           <p className="max-w-xl md:text-right">
             La información de este sitio es de carácter general y no constituye asesoría legal.

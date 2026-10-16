@@ -5,7 +5,7 @@ import {
   useScroll,
 } from "framer-motion";
 import { useEffect, useState } from "react";
-import { navLinks, PHONE, PHONE_HREF } from "../data";
+import { navLinks } from "../data";
 import logoH from "../assets/logo-h-512.png";
 import { cn } from "../utils/cn";
 import { Button, ease } from "./ui";
@@ -115,9 +115,6 @@ export default function Nav() {
               <Button href="#contacto" onClick={() => setOpen(false)}>
                 Agendar consulta
               </Button>
-              <a href={PHONE_HREF} className="text-sm tracking-[0.15em] text-ivory/70">
-                {PHONE}
-              </a>
             </motion.div>
           </motion.div>
         )}

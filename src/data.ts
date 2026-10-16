@@ -1,8 +1,6 @@
 import camilaFoto from "./assets/camila.jpg";
 import diegoFoto from "./assets/diego.jpg";
 
-export const PHONE = "+56 9 7865 0792";
-export const PHONE_HREF = "tel:+56978650792";
 export const EMAIL = "contacto@estudiosc.cl";
 
 export const navLinks = [
@@ -117,8 +115,6 @@ export const team = [
     pos: "50% 45%",
     zoom: 1,
     bio: "Abogado de la Universidad Alberto Hurtado. Postítulo en Derecho Administrativo y Gestión Pública. Profesor asistente en la FEN de la Universidad de Chile. Experiencia en seguros, responsabilidad y daños, litigación civil, consumidor, recupero y gestión de carteras judiciales.",
-    phone: "+56 9 7865 0792",
-    phoneHref: "tel:+56978650792",
     email: "diego@estudiosc.cl",
   },
   {
@@ -129,8 +125,6 @@ export const team = [
     pos: "50% 45%",
     zoom: 1,
     bio: "Abogada con práctica en litigación y tramitación penal, derecho laboral y aguas, con especial dedicación a audiencias y tramitación oral. Su experiencia fortalece la conducción procesal y la representación directa de clientes en asuntos contenciosos.",
-    phone: "+56 9 8240 2276",
-    phoneHref: "tel:+56982402276",
     email: "camila@estudiosc.cl",
   },
 ];

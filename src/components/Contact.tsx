@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, type FormEvent, type ReactNode } from "react";
-import { EMAIL, PHONE, PHONE_HREF, reasons } from "../data";
+import { EMAIL, reasons } from "../data";
 import { cn } from "../utils/cn";
 import { Button, Eyebrow, Reveal, SplitWords, ease } from "./ui";
 
@@ -141,18 +141,8 @@ export default function Contact() {
               <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-gold">
                 {EMAIL}
               </a>
-              <sup className="ml-1 text-gold">*</sup>
-            </InfoRow>
-            <InfoRow label="Teléfono" i={2}>
-              <a href={PHONE_HREF} className="transition-colors hover:text-gold">
-                {PHONE}
-              </a>
-              <sup className="ml-1 text-gold">*</sup>
             </InfoRow>
             <div className="border-t border-ivory/12" />
-            <p className="mt-4 text-xs italic text-ivory/40">
-              * Datos provisorios, pendientes de confirmación del estudio.
-            </p>
           </div>
         </div>
 
@@ -335,7 +325,7 @@ export default function Contact() {
                       className="mt-6 overflow-hidden border border-rose-400/40 bg-rose-500/10 px-5 py-4 text-sm leading-relaxed text-rose-200"
                     >
                       No pudimos enviar su mensaje. Por favor escríbanos directamente a{" "}
-                      {EMAIL} o llámenos al {PHONE}.
+                      {EMAIL}.
                     </motion.div>
                   )}
                 </AnimatePresence>
