@@ -87,14 +87,6 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Líneas decorativas */}
-      <motion.div
-        initial={{ scaleY: 0 }}
-        animate={{ scaleY: 1 }}
-        transition={{ duration: 1.8, delay: D, ease }}
-        className="absolute top-0 left-6 hidden h-full w-px origin-top bg-gradient-to-b from-transparent via-gold/30 to-transparent lg:left-10 xl:block"
-      />
-
       <motion.div
         style={{ y: textY, opacity: fade }}
         className="container-x relative z-10 flex flex-1 flex-col justify-center pt-32 pb-10"

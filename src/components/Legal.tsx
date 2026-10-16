@@ -226,12 +226,20 @@ export default function Legal({ cual }: { cual: PaginaLegal }) {
   const { eyebrow, titulo } = TITULOS[cual];
   const secciones = cual === "privacidad" ? PRIVACIDAD : cual === "terminos" ? TERMINOS : [];
 
+  // Asignación directa al hash (dispara hashchange y App monta el inicio).
+  const volver = () => {
+    window.location.hash = "#top";
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="min-h-screen bg-ink">
       {/* Mini header */}
       <header className="border-b border-ivory/10 bg-ink/80 backdrop-blur-xl">
         <div className="container-x flex h-20 items-center justify-between">
-          <a href="#top" aria-label="Estudio SC, inicio">
+          {/* Botones, no enlaces: el scroll suave global intercepta los <a href="#top">
+              con preventDefault y la página legal nunca se enteraría del cambio. */}
+          <button onClick={volver} aria-label="Estudio SC, inicio">
             <img
               src={logoH}
               alt="Estudio SC"
@@ -239,13 +247,13 @@ export default function Legal({ cual }: { cual: PaginaLegal }) {
               height={164}
               className="h-10 w-auto max-w-[190px] object-contain object-left [filter:invert(1)_sepia(.06)_brightness(1.06)]"
             />
-          </a>
-          <a
-            href="#top"
+          </button>
+          <button
+            onClick={volver}
             className="text-[12px] tracking-[0.16em] text-ivory/70 uppercase transition-colors hover:text-gold"
           >
             ← Volver al inicio
-          </a>
+          </button>
         </div>
       </header>
 
