@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState, type FormEvent, type ReactNode } from "react";
 import { EMAIL, PHONE, PHONE_HREF, reasons } from "../data";
 import { cn } from "../utils/cn";
-import { Button, Eyebrow, Reveal, SplitWords, ease, toast } from "./ui";
+import { Button, Eyebrow, Reveal, SplitWords, ease } from "./ui";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -313,16 +313,12 @@ export default function Contact() {
                     <span>
                       Autorizo el tratamiento de mis datos para responder esta consulta, conforme a
                       la{" "}
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          toast("La Política de privacidad estará disponible próximamente.");
-                        }}
+                      <a
+                        href="#privacidad"
                         className="text-gold underline underline-offset-4"
                       >
                         Política de privacidad
-                      </button>
+                      </a>
                       .
                     </span>
                   </label>

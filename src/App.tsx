@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import Criteria from "./components/Criteria";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
+import Legal, { type PaginaLegal } from "./components/Legal";
 import Nav from "./components/Nav";
 import Practice from "./components/Practice";
 import Preloader from "./components/Preloader";
@@ -100,8 +101,11 @@ function BackToTop() {
   );
 }
 
+const PAGINAS_LEGALES: PaginaLegal[] = ["privacidad", "terminos", "mapa"];
+
 export default function App() {
   const [loading, setLoading] = useState(true);
+  const [ruta, setRuta] = useState(() => window.location.hash.replace("#", ""));
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 28, restDelta: 0.001 });
 
@@ -115,6 +119,43 @@ export default function App() {
   }, []);
 
   useEffect(() => initSmoothScroll(), []);
+
+  // Routing por hash: #privacidad, #terminos y #mapa muestran páginas
+  // legales; cualquier otro hash con sección existente hace scroll a ella
+  // (cubre los enlaces del mapa y el "volver" cuando el main se monta).
+  useEffect(() => {
+    const leer = () => setRuta(window.location.hash.replace("#", ""));
+    leer();
+    window.addEventListener("hashchange", leer);
+    return () => window.removeEventListener("hashchange", leer);
+  }, []);
+
+  useEffect(() => {
+    if ((PAGINAS_LEGALES as string[]).includes(ruta)) {
+      document.title = "Estudio SC | Abogados en Santiago, Chile";
+      window.scrollTo(0, 0);
+      return;
+    }
+    if (ruta === "" || ruta === "top") {
+      window.scrollTo(0, 0);
+      return;
+    }
+    const el = document.getElementById(ruta);
+    if (el) {
+      const header = document.querySelector("header");
+      const off = (header instanceof HTMLElement ? header.offsetHeight : 80) + 12;
+      window.scrollTo(0, el.getBoundingClientRect().top + window.pageYOffset - off);
+    }
+  }, [ruta, loading]);
+
+  if (!loading && (PAGINAS_LEGALES as string[]).includes(ruta)) {
+    return (
+      <>
+        <Legal cual={ruta as PaginaLegal} />
+        <Toast />
+      </>
+    );
+  }
 
   return (
     <>

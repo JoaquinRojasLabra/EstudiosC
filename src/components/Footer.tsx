@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import { navLinks, PHONE, PHONE_HREF, EMAIL } from "../data";
 import logoStack from "../assets/logo-512.png";
-import { Reveal, ease, toast } from "./ui";
+import { Reveal, ease } from "./ui";
 
-const legal = ["Política de privacidad", "Términos", "Mapa del sitio"];
+const legal = [
+  { label: "Política de privacidad", href: "#privacidad" },
+  { label: "Términos", href: "#terminos" },
+  { label: "Mapa del sitio", href: "#mapa" },
+];
 
 export default function Footer() {
   return (
@@ -58,14 +62,14 @@ export default function Footer() {
             <h4 className="text-[11px] tracking-[0.28em] text-gold uppercase">Legal</h4>
             <ul className="mt-6 space-y-3">
               {legal.map((l) => (
-                <li key={l}>
-                  <button
-                    onClick={() => toast(`${l}: este documento estará disponible próximamente.`)}
+                <li key={l.href}>
+                  <a
+                    href={l.href}
                     className="group inline-flex items-center gap-2 text-left text-ivory/65 transition-colors hover:text-ivory"
                   >
                     <span className="h-px w-0 bg-gold transition-all duration-500 group-hover:w-5" />
-                    {l}
-                  </button>
+                    {l.label}
+                  </a>
                 </li>
               ))}
             </ul>
