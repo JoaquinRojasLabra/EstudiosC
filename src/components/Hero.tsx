@@ -51,8 +51,13 @@ export default function Hero() {
       onMouseMove={onMove}
       className="grain relative flex min-h-[100svh] flex-col overflow-hidden bg-ink"
     >
-      {/* Imagen */}
-      <motion.div style={{ y: imgY }} className="absolute inset-y-0 right-0 w-full lg:w-[64%]">
+      {/* Imagen: solo el 45% derecho en escritorio. Los overlays viven DENTRO
+          de este contenedor, así que el fundido con el fondo es por construcción
+          y no puede quedar ningún borde vertical. */}
+      {/* Máscara alfa en el borde izquierdo: el overlay arranca opaco justo en
+          el borde del contenedor y el escalón se percibía como franja (bandas
+          de Mach). El fundido alfa lo elimina por construcción. */}
+      <motion.div style={{ y: imgY }} className="absolute inset-y-0 right-0 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_8%)] lg:w-[45%]">
         <motion.img
           src={heroImg}
           alt="Despacho del estudio, con biblioteca jurídica y vista a Santiago al atardecer"
